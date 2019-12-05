@@ -9,6 +9,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
     />
+    <link rel="stylesheet" href="style.css" />
     <script src="main.js"></script>
   </head>
   <body>
@@ -27,28 +28,63 @@
     </nav>
     <div class="container">
       <div class="row">
-        <div class="input-field col s6 offset-s3">
+        <div class="input-field col s4 offset-s4">
           <input type="number" placeholder="Number 1" id="num1" />
         </div>
 
-        <div class="input-field col s6 offset-s3">
+        <div class="input-field col s4 offset-s4">
           <input type="number" placeholder="Number 2" id="num2" />
         </div>
-        <div class="col s6 offset-s3" style="margin-bottom: 1rem; margin-top: 1rem;">
-          <button class="btn green darken-1" style="width: 50px;margin: 3px;" id="plus">+</button>
-          <button class="btn green darken-1" style="width: 50px;margin: 3px;" id="minus">-</button>
-          <button class="btn green darken-1" style="width: 50px;margin: 3px;" id="equal">*</button>
-          <button class="btn green darken-1" style="width: 50px;margin: 3px;" id="divide">/</button>
-          <button class="btn orange darken-2" style="width: 100px;margin: 3px;" id="equal">
-            =
-          </button>
+        <div class="col s4 offset-s4" style="margin-bottom: 4px; margin-top: 1rem;">
+          <div class="btn-num col s4" style="padding: 3px">
+            <button class="btn grey darken-1 col s12" id="plus">1</button>
+          </div>
+          <div class="btn-num col s4" style="padding: 3px">
+            <button class="btn grey darken-1 col s12" id="plus">2</button>
+          </div>
+          <div class="btn-num col s4" style="padding: 3px">
+            <button class="btn grey darken-1 col s12" id="plus">3</button>
+          </div>
+          <div class="btn-num col s4" style="padding: 3px">
+            <button class="btn grey darken-1 col s12" id="plus">4</button>
+          </div>
+          <div class="btn-num col s4" style="padding: 3px">
+            <button class="btn grey darken-1 col s12" id="plus">5</button>
+          </div>
+          <div class="btn-num col s4" style="padding: 3px">
+            <button class="btn grey darken-1 col s12" id="plus">6</button>
+          </div>
+          <div class="btn-num col s4" style="padding: 3px">
+            <button class="btn grey darken-1 col s12" id="plus">7</button>
+          </div>
+          <div class="btn-num col s4" style="padding: 3px">
+            <button class="btn grey darken-1 col s12" id="plus">8</button>
+          </div>
+          <div class="btn-num col s4" style="padding: 3px">
+            <button class="btn grey darken-1 col s12" id="plus">9</button>
+          </div>
+          <div class="btn-num col s8" style="padding: 3px">
+            <button class="btn grey darken-1 col s12" id="plus">0</button>
+          </div>
+          <div class="btn-num col s4" style="padding: 3px">
+            <button class="btn orange darken-3 col s12" id="plus">C</button>
+          </div>
         </div>
-      </div>
-
-      <div class="row">
-        <div class="card col s6 offset-s3" style="display: none;">
-          <div class="card-content">
-            <div class="card-title" id="output"></div>
+        <div class="col s4 offset-s4" style="margin-bottom: 1rem;">
+          <div class="col s3" style="padding:3px">
+            <button class="btn light-blue darken-3 col s12" id="plus">+</button>
+          </div>
+          <div class="col s3" style="padding:3px">
+            <button class="btn light-blue darken-3 col s12" id="minus">-</button>
+          </div>
+          <div class="col s3" style="padding:3px">
+            <button class="btn light-blue darken-3 col s12" id="equal">*</button>
+          </div>
+          <div class="col s3" style="padding:3px">
+            <button class="btn light-blue darken-3 col s12" id="divide">/</button>
+          </div>
+          <div class="col s12" style="padding:3px">
+            <button class="btn orange darken-3 col s12" id="equal">=</button>
           </div>
         </div>
       </div>
