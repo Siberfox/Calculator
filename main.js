@@ -20,24 +20,37 @@ document.addEventListener('DOMContentLoaded', () => {
   const equalBtn = document.querySelector('#equal');
   const output = document.querySelector('#output');
 
-  oneBtn.addEventListener('click', () => (output.innerHTML = result += `1`));
-  twoBtn.addEventListener('click', () => (output.innerHTML = result += `2`));
-  threeBtn.addEventListener('click', () => (output.innerHTML = result += `3`));
-  fourBtn.addEventListener('click', () => (output.innerHTML = result += `4`));
-  fiveBtn.addEventListener('click', () => (output.innerHTML = result += `5`));
-  sixBtn.addEventListener('click', () => (output.innerHTML = result += `6`));
-  sevenBtn.addEventListener('click', () => (output.innerHTML = result += `7`));
-  eightBtn.addEventListener('click', () => (output.innerHTML = result += `8`));
-  nineBtn.addEventListener('click', () => (output.innerHTML = result += `9`));
-  nullBtn.addEventListener('click', () => (output.innerHTML = result += `0`));
-  resetBtn.addEventListener('click', () => (output.innerHTML = result = ''));
+  function getValues(n) {
+    result += `${n}`;
+    output.innerHTML = result;
+  }
 
-  plusBtn.addEventListener('click', () => (output.innerHTML = result += `+`));
-  minusBtn.addEventListener('click', () => (output.innerHTML = result += `-`));
-  divideBtn.addEventListener('click', () => (output.innerHTML = result += `/`));
-  timesBtn.addEventListener('click', () => (output.innerHTML = result += `*`));
+  function reset() {
+    result = '';
+    output.innerHTML = result;
+  }
 
-  equalBtn.addEventListener('click', () => {
-    result === '' ? (output.innerHTML = result += `0`) : (output.innerHTML = result = eval(result));
-  });
+  function equal() {
+    result = result === '' ? `0` : eval(result);
+    output.innerHTML = result;
+  }
+
+  oneBtn.addEventListener('click', () => getValues(1));
+  twoBtn.addEventListener('click', () => getValues(2));
+  threeBtn.addEventListener('click', () => getValues(3));
+  fourBtn.addEventListener('click', () => getValues(4));
+  fiveBtn.addEventListener('click', () => getValues(5));
+  sixBtn.addEventListener('click', () => getValues(6));
+  sevenBtn.addEventListener('click', () => getValues(7));
+  eightBtn.addEventListener('click', () => getValues(8));
+  nineBtn.addEventListener('click', () => getValues(9));
+  nullBtn.addEventListener('click', () => getValues(0));
+  resetBtn.addEventListener('click', reset);
+
+  plusBtn.addEventListener('click', () => getValues('+'));
+  minusBtn.addEventListener('click', () => getValues('-'));
+  divideBtn.addEventListener('click', () => getValues('/'));
+  timesBtn.addEventListener('click', () => getValues('*'));
+
+  equalBtn.addEventListener('click', equal);
 });
