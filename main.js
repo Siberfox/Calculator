@@ -1,4 +1,3 @@
-let result = '';
 document.addEventListener('DOMContentLoaded', () => {
   const oneBtn = document.querySelector('#one');
   const twoBtn = document.querySelector('#two');
@@ -20,18 +19,27 @@ document.addEventListener('DOMContentLoaded', () => {
   const equalBtn = document.querySelector('#equal');
   const output = document.querySelector('#output');
 
+  let result = '0';
+  output.innerHTML = result;
+
   function getValues(n) {
+    if (result === '0') result = '';
     result += `${n}`;
     output.innerHTML = result;
   }
 
+  function getOperator(i) {
+    result += `${i}`;
+    output.innerHTML = result;
+  }
+
   function reset() {
-    result = '';
+    result = '0';
     output.innerHTML = result;
   }
 
   function equal() {
-    result = result === '' ? `0` : eval(result);
+    result = eval(result);
     output.innerHTML = result;
   }
 
@@ -47,10 +55,10 @@ document.addEventListener('DOMContentLoaded', () => {
   nullBtn.addEventListener('click', () => getValues(0));
   resetBtn.addEventListener('click', reset);
 
-  plusBtn.addEventListener('click', () => getValues('+'));
-  minusBtn.addEventListener('click', () => getValues('-'));
-  divideBtn.addEventListener('click', () => getValues('/'));
-  timesBtn.addEventListener('click', () => getValues('*'));
+  plusBtn.addEventListener('click', () => getOperator('+'));
+  minusBtn.addEventListener('click', () => getOperator('-'));
+  divideBtn.addEventListener('click', () => getOperator('/'));
+  timesBtn.addEventListener('click', () => getOperator('*'));
 
   equalBtn.addEventListener('click', equal);
 });

@@ -1,3 +1,17 @@
 .btn {
-  font-size: 18px;
+  font-size: 23px;
+  background-color: #fff;
+}
+
+.btn.value {
+  padding: 3px;
+}
+
+.card {
+  padding: 3px;
+  height: 50px;
+  line-height: 50px;
+  margin-bottom: 4px;
+  margin-top: 3rem;
+  font-size: 30px;
 }

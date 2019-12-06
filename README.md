@@ -1,3 +1,3 @@
 **Simple calculator with Materialize Css**
 
-![logo](logo/screenshot.png)
+![logo](https://i.ibb.co/7tz75b7/image.png)
