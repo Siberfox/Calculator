@@ -10,6 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   const nineBtn = document.querySelector('#nine');
   const nullBtn = document.querySelector('#null');
   const resetBtn = document.querySelector('#reset');
+  const floatBtn = document.querySelector('#float');
 
   const plusBtn = document.querySelector('#plus');
   const minusBtn = document.querySelector('#minus');
@@ -55,6 +56,7 @@ document.addEventListener('DOMContentLoaded', () => {
   nullBtn.addEventListener('click', () => getValues(0));
   resetBtn.addEventListener('click', reset);
 
+  floatBtn.addEventListener('click', () => getOperator('.'));
   plusBtn.addEventListener('click', () => getOperator('+'));
   minusBtn.addEventListener('click', () => getOperator('-'));
   divideBtn.addEventListener('click', () => getOperator('/'));
