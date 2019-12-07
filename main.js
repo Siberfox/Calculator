@@ -41,6 +41,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
   function equal() {
     result = eval(result);
+    if (result % 1 !== 0) result = result.toFixed(3);
     output.innerHTML = result;
   }
 
