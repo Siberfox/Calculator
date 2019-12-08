@@ -40,9 +40,14 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
   function equal() {
-    result = eval(result);
-    if (result % 1 !== 0) result = result.toFixed(3);
-    output.innerHTML = result;
+    try {
+      result = eval(result);
+      if (result % 1 !== 0) result = +result.toFixed(3);
+      output.innerHTML = result;
+    } catch (err) {
+      result = '0';
+      output.innerHTML = 'Invalid expression';
+    }
   }
 
   oneBtn.addEventListener('click', () => getValues(1));
