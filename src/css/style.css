@@ -1,0 +1,105 @@
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+.main {
+  background-color: #e3e9e3;
+  font-family: 'Roboto', sans-serif;
+  color: #abacb4;
+  font-size: 18px;
+  line-height: 21px;
+  letter-spacing: 0.8em;
+  height: 100vh;
+}
+
+.main-section {
+  max-width: 900px;
+  height: 600px;
+  margin: auto;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+}
+
+.main-title {
+  text-align: center;
+  margin-top: 170px;
+  width: 50%;
+}
+
+.main-calc {
+  width: 342px;
+  margin-right: 60px;
+  background-image: url("../img/phone-bg.png");
+  background-repeat: no-repeat;
+  background-position: center bottom;
+}
+
+@media (max-width: 768px) {
+  .main-title {
+    display: none;
+  }
+  .main-section {
+    -webkit-box-pack: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  .main-calc {
+    margin-right: 0;
+  }
+}
+
+@media (max-width: 342px) {
+  .main-calc {
+    background-image: none;
+  }
+}
+
+.calc {
+  position: relative;
+}
+
+.calc-wrapper {
+  position: absolute;
+  bottom: 0;
+  left: 11%;
+  width: 268px;
+  height: 460px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  vertical-align: middle;
+  background-color: #a09595;
+  border: solid 1px black;
+}
+
+.calc-display {
+  height: 215px;
+}
+
+.calc-buttons {
+  background-color: #f4ebe5;
+  height: 250px;
+}
+
+@media (max-width: 342px) {
+  .calc-wrapper {
+    left: 7%;
+    top: 30px;
+    max-width: 85%;
+  }
+}
+/*# sourceMappingURL=style.css.map */

@@ -1,0 +1,30 @@
+.calc {
+  position: relative;
+  &-wrapper {
+    position: absolute;
+    bottom: 0;
+    left: 11%;
+    width: 268px;
+    height: 460px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    vertical-align: middle;
+    background-color: #a09595;
+    border: solid 1px black;
+  }
+  &-display {
+    height: 215px;
+  }
+  &-buttons {
+    background-color: #f4ebe5;
+    height: 250px;
+  }
+}
+@media (max-width: 342px) {
+  .calc-wrapper {
+    left: 7%;
+    top: 30px;
+    max-width: 85%;
+  }
+}
