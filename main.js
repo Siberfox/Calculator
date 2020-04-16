@@ -21,32 +21,32 @@ document.addEventListener('DOMContentLoaded', () => {
   const output = document.querySelector('#output');
 
   let result = '0';
-  output.innerHTML = result;
+  output.innerText = result;
 
   function getValues(n) {
     if (result === '0') result = '';
     result += `${n}`;
-    output.innerHTML = result;
+    output.innerText = result;
   }
 
   function getOperator(i) {
     result += `${i}`;
-    output.innerHTML = result;
+    output.innerText = result;
   }
 
   function reset() {
     result = '0';
-    output.innerHTML = result;
+    output.innerText = result;
   }
 
   function equal() {
     try {
       result = eval(result);
       if (result % 1 !== 0) result = +result.toFixed(3);
-      output.innerHTML = result;
+      output.innerText = result;
     } catch (err) {
       result = '0';
-      output.innerHTML = 'Invalid expression';
+      output.innerText = 'Invalid expression';
     }
   }
 
