@@ -15,6 +15,14 @@
   }
   &-display {
     height: 215px;
+    background-image: url('../img/StatusBar.png');
+    background-repeat: no-repeat;
+    top: 0;
+    padding: 33px 12px;
+    color: #fff5ee;
+    font-weight: 300;
+    font-size: 72px;
+    line-height: 84px;
   }
   &-buttons {
     background-color: #f4ebe5;

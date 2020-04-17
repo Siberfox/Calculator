@@ -5,13 +5,17 @@
           box-sizing: border-box;
 }
 
+h1 {
+  font-size: 20px;
+  letter-spacing: 0.8em;
+}
+
 .main {
   background-color: #e3e9e3;
   font-family: 'Roboto', sans-serif;
   color: #abacb4;
   font-size: 18px;
   line-height: 21px;
-  letter-spacing: 0.8em;
   height: 100vh;
 }
 
@@ -88,6 +92,14 @@
 
 .calc-display {
   height: 215px;
+  background-image: url("../img/StatusBar.png");
+  background-repeat: no-repeat;
+  top: 0;
+  padding: 33px 12px;
+  color: #fff5ee;
+  font-weight: 300;
+  font-size: 72px;
+  line-height: 84px;
 }
 
 .calc-buttons {
