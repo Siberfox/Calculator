@@ -7,3 +7,48 @@ h1 {
   font-size: 20px;
   letter-spacing: 0.8em;
 }
+button {
+  cursor: pointer;
+  border: none;
+  flex: 2 1 65px;
+  height: 50px;
+  padding: 0;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 21px;
+  color: rgba(0, 0, 0, 0.24);
+  outline: none;
+  background-color: #f4ebe5;
+  &:hover {
+    background-color: darken(#f4ebe5, 10%);
+  }
+  &:nth-child(n + 5):nth-child(-n + 7),
+  &:nth-child(n + 13):nth-child(-n + 15) {
+    background-color: #ece4de;
+    &:hover {
+      background-color: darken(#ece4de, 10%);
+    }
+  }
+  &:nth-child(4n) {
+    background-color: #cabab7;
+    color: #f4ebe5;
+    &:hover {
+      background-color: darken(#cabab7, 10%);
+    }
+  }
+  &:nth-child(8n) {
+    background-color: #b8adac;
+    color: #f4ebe5;
+    &:hover {
+      background-color: darken(#b8adac, 10%);
+    }
+  }
+  &:last-child {
+    font-size: 25px;
+    background-color: #988d8d;
+    color: #f4ebe5;
+    &:hover {
+      background-color: darken(#988d8d, 10%);
+    }
+  }
+}

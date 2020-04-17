@@ -10,6 +10,62 @@ h1 {
   letter-spacing: 0.8em;
 }
 
+button {
+  cursor: pointer;
+  border: none;
+  -webkit-box-flex: 2;
+      -ms-flex: 2 1 65px;
+          flex: 2 1 65px;
+  height: 50px;
+  padding: 0;
+  font-weight: bold;
+  font-size: 18px;
+  line-height: 21px;
+  color: rgba(0, 0, 0, 0.24);
+  outline: none;
+  background-color: #f4ebe5;
+}
+
+button:hover {
+  background-color: #e5cfc1;
+}
+
+button:nth-child(n + 5):nth-child(-n + 7), button:nth-child(n + 13):nth-child(-n + 15) {
+  background-color: #ece4de;
+}
+
+button:nth-child(n + 5):nth-child(-n + 7):hover, button:nth-child(n + 13):nth-child(-n + 15):hover {
+  background-color: #d9cabe;
+}
+
+button:nth-child(4n) {
+  background-color: #cabab7;
+  color: #f4ebe5;
+}
+
+button:nth-child(4n):hover {
+  background-color: #b49e9a;
+}
+
+button:nth-child(8n) {
+  background-color: #b8adac;
+  color: #f4ebe5;
+}
+
+button:nth-child(8n):hover {
+  background-color: #a09291;
+}
+
+button:last-child {
+  font-size: 25px;
+  background-color: #988d8d;
+  color: #f4ebe5;
+}
+
+button:last-child:hover {
+  background-color: #7f7373;
+}
+
 .main {
   background-color: #e3e9e3;
   font-family: 'Roboto', sans-serif;
@@ -103,8 +159,12 @@ h1 {
 }
 
 .calc-buttons {
-  background-color: #f4ebe5;
   height: 250px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
 }
 
 @media (max-width: 342px) {
