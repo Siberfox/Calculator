@@ -21,8 +21,13 @@
     padding: 33px 12px;
     color: #fff5ee;
     font-weight: 300;
-    font-size: 72px;
-    line-height: 84px;
+    font-size: 30px;
+    line-height: 64px;
+    text-align: right;
+    overflow: hidden;
+    &__curr {
+      font-size: 60px;
+    }
   }
   &-buttons {
     height: 250px;

@@ -154,8 +154,14 @@ button:last-child:hover {
   padding: 33px 12px;
   color: #fff5ee;
   font-weight: 300;
-  font-size: 72px;
-  line-height: 84px;
+  font-size: 30px;
+  line-height: 64px;
+  text-align: right;
+  overflow: hidden;
+}
+
+.calc-display__curr {
+  font-size: 60px;
 }
 
 .calc-buttons {
