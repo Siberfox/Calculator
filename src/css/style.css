@@ -164,6 +164,10 @@ button:last-child:hover {
   font-size: 60px;
 }
 
+.calc-display__prev {
+  height: 60px;
+}
+
 .calc-buttons {
   height: 250px;
   display: -webkit-box;
