@@ -52,8 +52,7 @@ class Calculator {
     }
     if (this.valueArray.length > 2 || !isFinite(this.currDisplay.innerText)) {
       this.currDisplay.innerText = 'Invalid expression';
-    }
-    if (parseFloat(this.currDisplay.innerText) % 1 !== 0) {
+    } else if (parseFloat(this.currDisplay.innerText) % 1 !== 0) {
       this.currDisplay.innerText = parseFloat(this.currDisplay.innerText).toFixed(3);
     }
     this.valueArray.length = 0;
