@@ -1,3 +1,5 @@
 **Simple calculator**
 
-[Link](https://siberfox.github.io/Calculator/src/)
+html/css/js
+
+[Link](https://siberfox.github.io/Calculator/)
