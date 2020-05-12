@@ -2,7 +2,7 @@
 *::before,
 *::after {
   -webkit-box-sizing: border-box;
-          box-sizing: border-box;
+  box-sizing: border-box;
 }
 
 h1 {
@@ -14,8 +14,8 @@ button {
   cursor: pointer;
   border: none;
   -webkit-box-flex: 2;
-      -ms-flex: 2 1 65px;
-          flex: 2 1 65px;
+  -ms-flex: 2 1 65px;
+  flex: 2 1 65px;
   height: 50px;
   padding: 0;
   font-weight: bold;
@@ -30,11 +30,13 @@ button:hover {
   background-color: #e5cfc1;
 }
 
-button:nth-child(n + 5):nth-child(-n + 7), button:nth-child(n + 13):nth-child(-n + 15) {
+button:nth-child(n + 5):nth-child(-n + 7),
+button:nth-child(n + 13):nth-child(-n + 15) {
   background-color: #ece4de;
 }
 
-button:nth-child(n + 5):nth-child(-n + 7):hover, button:nth-child(n + 13):nth-child(-n + 15):hover {
+button:nth-child(n + 5):nth-child(-n + 7):hover,
+button:nth-child(n + 13):nth-child(-n + 15):hover {
   background-color: #d9cabe;
 }
 
@@ -83,8 +85,8 @@ button:last-child:hover {
   display: -ms-flexbox;
   display: flex;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
 }
 
 .main-title {
@@ -96,7 +98,7 @@ button:last-child:hover {
 .main-calc {
   width: 342px;
   margin-right: 60px;
-  background-image: url("../img/phone-bg.png");
+  background-image: url('../img/phone-bg.png');
   background-repeat: no-repeat;
   background-position: center bottom;
 }
@@ -107,8 +109,8 @@ button:last-child:hover {
   }
   .main-section {
     -webkit-box-pack: center;
-        -ms-flex-pack: center;
-            justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
   }
   .main-calc {
     margin-right: 0;
@@ -136,11 +138,11 @@ button:last-child:hover {
   display: flex;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
+  -ms-flex-direction: column;
+  flex-direction: column;
   -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
   vertical-align: middle;
   background-color: #a09595;
   border: solid 1px black;
@@ -148,7 +150,7 @@ button:last-child:hover {
 
 .calc-display {
   height: 215px;
-  background-image: url("../img/StatusBar.png");
+  background-image: url('../img/StatusBar.png');
   background-repeat: no-repeat;
   top: 0;
   padding: 33px 12px;
@@ -174,7 +176,7 @@ button:last-child:hover {
   display: -ms-flexbox;
   display: flex;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 @media (max-width: 342px) {
