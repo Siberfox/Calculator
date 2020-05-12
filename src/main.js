@@ -1,4 +1,5 @@
-import Calculator from './calculator.js';
+import './scss/style.scss';
+import Calculator from './js/calculator.js';
 
 const numberBtn = document.querySelectorAll('[data-number]');
 const operatorBtn = document.querySelectorAll('[data-operator]');
