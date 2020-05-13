@@ -81,7 +81,7 @@
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = "./main.js");
+/******/ 	return __webpack_require__(__webpack_require__.s = "./index.js");
 /******/ })
 /************************************************************************/
 /******/ ({
@@ -168,6 +168,18 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ 
 
 /***/ }),
 
+/***/ "./index.js":
+/*!******************!*\
+  !*** ./index.js ***!
+  \******************/
+/*! no exports provided */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./scss/style.scss */ \"./scss/style.scss\");\n/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_scss_style_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _js_calculator_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./js/calculator.js */ \"./js/calculator.js\");\n\n\n\nconst numberBtn = document.querySelectorAll('[data-number]');\nconst operatorBtn = document.querySelectorAll('[data-operator]');\nconst equalBtn = document.querySelector('[data-equal]');\nconst clearBtn = document.querySelector('[data-clear]');\nconst floatBtn = document.querySelector('[data-float]');\nconst previousDisplay = document.querySelector('[data-display-previous]');\nconst currentDisplay = document.querySelector('[data-display-current]');\n\nconst calculator = new _js_calculator_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"](previousDisplay, currentDisplay);\n\nnumberBtn.forEach(button => {\n  button.addEventListener('click', () => {\n    calculator.getValues(button.innerText);\n    calculator.updateDisplay();\n  });\n});\n\noperatorBtn.forEach(button => {\n  button.addEventListener('click', () => {\n    calculator.getOperator(button.innerText);\n    calculator.updateDisplay();\n  });\n});\n\nequalBtn.addEventListener('click', () => {\n  calculator.equal();\n  calculator.updateDisplay();\n});\n\nclearBtn.addEventListener('click', () => {\n  calculator.clear();\n  calculator.updateDisplay();\n});\n\nfloatBtn.addEventListener('click', () => {\n  calculator.getFloatValues();\n  calculator.updateDisplay();\n});\n\n\n//# sourceURL=webpack:///./index.js?");
+
+/***/ }),
+
 /***/ "./js/calculator.js":
 /*!**************************!*\
   !*** ./js/calculator.js ***!
@@ -177,18 +189,6 @@ eval("__webpack_require__.r(__webpack_exports__);\n/* harmony default export */ 
 
 "use strict";
 eval("__webpack_require__.r(__webpack_exports__);\n/* harmony export (binding) */ __webpack_require__.d(__webpack_exports__, \"default\", function() { return Calculator; });\nclass Calculator {\n  constructor(prevDisplay, currDisplay) {\n    this.prevDisplay = prevDisplay;\n    this.currDisplay = currDisplay;\n    this.valueArray = [];\n  }\n\n  getValues(number) {\n    if (this.currDisplay.innerText === '0' || this.currDisplay.innerText === 'Invalid expression') {\n      this.currDisplay.innerText = number;\n    } else {\n      this.currDisplay.innerText += number;\n    }\n  }\n\n  getFloatValues() {\n    if (this.currDisplay.innerText.includes('.')) {\n      return;\n    }\n    this.currDisplay.innerText += '.';\n  }\n\n  getOperator(operator) {\n    if (this.currDisplay.innerText === 'Invalid expression') {\n      this.currDisplay.innerText = '0';\n    }\n    if (this.valueArray.length === 2 && this.currDisplay.innerText) {\n      this.equal();\n    }\n    this.valueArray.push(this.currDisplay.innerText, operator);\n    this.prevDisplay.innerText = this.valueArray.join(' ');\n    this.currDisplay.innerText = '';\n  }\n\n  equal() {\n    const prev = parseFloat(this.valueArray[0]);\n    const curr = parseFloat(this.currDisplay.innerText);\n    switch (this.valueArray[1]) {\n      case '+':\n        this.currDisplay.innerText = prev + curr;\n        break;\n      case '-':\n        this.currDisplay.innerText = prev - curr;\n        break;\n      case 'x':\n        this.currDisplay.innerText = prev * curr;\n        break;\n      case '÷':\n        this.currDisplay.innerText = prev / curr;\n        break;\n      default:\n    }\n    if (this.valueArray.length > 2 || !isFinite(this.currDisplay.innerText)) {\n      this.currDisplay.innerText = 'Invalid expression';\n    } else if (parseFloat(this.currDisplay.innerText) % 1 !== 0) {\n      this.currDisplay.innerText = parseFloat(this.currDisplay.innerText).toFixed(3);\n    }\n    this.valueArray.length = 0;\n    this.prevDisplay.innerText = '';\n  }\n\n  clear() {\n    this.prevDisplay.innerText = '';\n    this.currDisplay.innerText = '0';\n    this.valueArray.length = 0;\n  }\n\n  updateDisplay() {\n    this.currDisplay.style.fontSize = '';\n    if (this.currDisplay.innerText.length > 7) {\n      this.currDisplay.style.fontSize = '40px';\n    }\n    if (this.currDisplay.innerText.length > 11) {\n      this.currDisplay.style.fontSize = '30px';\n    }\n  }\n}\n\n\n//# sourceURL=webpack:///./js/calculator.js?");
-
-/***/ }),
-
-/***/ "./main.js":
-/*!*****************!*\
-  !*** ./main.js ***!
-  \*****************/
-/*! no exports provided */
-/***/ (function(module, __webpack_exports__, __webpack_require__) {
-
-"use strict";
-eval("__webpack_require__.r(__webpack_exports__);\n/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./scss/style.scss */ \"./scss/style.scss\");\n/* harmony import */ var _scss_style_scss__WEBPACK_IMPORTED_MODULE_0___default = /*#__PURE__*/__webpack_require__.n(_scss_style_scss__WEBPACK_IMPORTED_MODULE_0__);\n/* harmony import */ var _js_calculator_js__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./js/calculator.js */ \"./js/calculator.js\");\n\n\n\nconst numberBtn = document.querySelectorAll('[data-number]');\nconst operatorBtn = document.querySelectorAll('[data-operator]');\nconst equalBtn = document.querySelector('[data-equal]');\nconst clearBtn = document.querySelector('[data-clear]');\nconst floatBtn = document.querySelector('[data-float]');\nconst previousDisplay = document.querySelector('[data-display-previous]');\nconst currentDisplay = document.querySelector('[data-display-current]');\n\nconst calculator = new _js_calculator_js__WEBPACK_IMPORTED_MODULE_1__[\"default\"](previousDisplay, currentDisplay);\n\nnumberBtn.forEach(button => {\n  button.addEventListener('click', () => {\n    calculator.getValues(button.innerText);\n    calculator.updateDisplay();\n  });\n});\n\noperatorBtn.forEach(button => {\n  button.addEventListener('click', () => {\n    calculator.getOperator(button.innerText);\n    calculator.updateDisplay();\n  });\n});\n\nequalBtn.addEventListener('click', () => {\n  calculator.equal();\n  calculator.updateDisplay();\n});\n\nclearBtn.addEventListener('click', () => {\n  calculator.clear();\n  calculator.updateDisplay();\n});\n\nfloatBtn.addEventListener('click', () => {\n  calculator.getFloatValues();\n  calculator.updateDisplay();\n});\n\n\n//# sourceURL=webpack:///./main.js?");
 
 /***/ }),
 
