@@ -33,6 +33,7 @@ module.exports = {
       filename: filename('css')
     })
   ],
+  devtool: process.env.NODE_ENV !== 'production' ? 'source-map' : '',
   module: {
     rules: [
       {
