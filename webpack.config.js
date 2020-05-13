@@ -1,23 +1,37 @@
 const path = require('path');
 const HTMLWEbpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
+const MiniCssExtractPlugin = require('mini-css-extract-plugin');
+const OptimizeCssAssetsWebpackPlugin = require('optimize-css-assets-webpack-plugin');
+const TerserWebpackPlugin = require('terser-webpack-plugin');
+
+const filename = ext =>
+  process.env.NODE_ENV === 'production' ? `[name].[hash].${ext}` : `[name].${ext}`;
 
 module.exports = {
   context: path.resolve(__dirname, 'src'),
-  mode: 'development',
   entry: { index: './index.js' },
   output: {
-    filename: '[name].[contenthash].js',
+    filename: filename('js'),
     path: path.resolve(__dirname, 'dist')
   },
   devServer: {
     port: 4200
   },
+  optimization: {
+    minimizer: [new TerserWebpackPlugin({}), new OptimizeCssAssetsWebpackPlugin({})]
+  },
   plugins: [
     new HTMLWEbpackPlugin({
-      template: './index.html'
+      template: './index.html',
+      minify: {
+        collapseWhitespace: process.env.NODE_ENV === 'production'
+      }
     }),
-    new CleanWebpackPlugin()
+    new CleanWebpackPlugin(),
+    new MiniCssExtractPlugin({
+      filename: filename('css')
+    })
   ],
   module: {
     rules: [
@@ -25,19 +39,23 @@ module.exports = {
         test: /\.s[ac]ss$/,
         use: [
           {
-            loader: 'style-loader' // creates style nodes from JS strings
+            loader: MiniCssExtractPlugin.loader
           },
-          {
-            loader: 'css-loader' // translates CSS into CommonJS
-          },
-          {
-            loader: 'sass-loader' // compiles Sass to CSS
-          }
+          'css-loader',
+          'sass-loader'
         ]
       },
       {
-        test: /\.(png|jpg|svg)$/,
+        test: /\.css$/,
+        use: ['style-loader', 'css-loader']
+      },
+      {
+        test: /\.(png|jpg|svg|gif)$/,
         loader: 'file-loader'
+      },
+      {
+        test: /\.(woff|woff2|eot|ttf|otf)$/,
+        use: ['file-loader']
       }
     ]
   }
