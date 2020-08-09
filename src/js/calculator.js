@@ -53,7 +53,7 @@ export default class Calculator {
     if (this.valueArray.length > 2 || !isFinite(this.currDisplay.innerText)) {
       this.currDisplay.innerText = 'Invalid expression';
     } else if (parseFloat(this.currDisplay.innerText) % 1 !== 0) {
-      this.currDisplay.innerText = parseFloat(this.currDisplay.innerText).toFixed(3);
+      this.currDisplay.innerText = Math.round(parseFloat(this.currDisplay.innerText) * 1000) / 1000;
     }
     this.valueArray.length = 0;
     this.prevDisplay.innerText = '';
